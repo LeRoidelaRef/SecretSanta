@@ -1,0 +1,19 @@
+import random
+
+def SecretSanta(NamesList):
+    test =False
+    while test==False:
+        test=True
+        rando=random.sample(NamesList,len(NamesList))
+        for i in range(len(rando)):
+            if rando[i]==NamesList[i]:
+                test=False
+    
+    for i in range(len(NamesList)):
+        fichier=open(NamesList[i]+' offers to.txt','x')
+        fichier.write(rando[i])
+        fichier.close
+
+if __name__=='__main__':
+    NamesList=['Francois','Thomas B.','Mathilde','Margaux','Sacha','Cassie','Antoine','Oriane']
+    SecretSanta(NamesList)
